@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="payment_method_dinger_kpay" model="payment.method">
+            <field name="name">Kpay</field>
+            <field name="code">kpay</field>
+            <field name="sequence">1</field>
+            <field name="active">True</field>
+            <field
+                    name="image"
+                    type="base64"
+                    file="payment_dinger/static/img/kpay.png"
+            />
+            <field name="support_tokenization">False</field>
+            <field name="support_express_checkout">False</field>
+            <field name="support_refund">none</field>
+            <field
+                    name="supported_currency_ids"
+                    eval="[Command.set([
+                         ref('base.USD'),
+                         ref('base.MMK'),
+                     ])]"
+            />
+        </record>
+
+        <record id="payment_method_dinger_ayapay" model="payment.method">
+            <field name="name">AYApay</field>
+            <field name="code">ayapay</field>
+            <field name="sequence">2</field>
+            <field name="active">True</field>
+            <field
+                    name="image"
+                    type="base64"
+                    file="payment_dinger/static/img/ayapay.png"
+            />
+            <field name="support_tokenization">False</field>
+            <field name="support_express_checkout">False</field>
+            <field name="support_refund">none</field>
+            <field
+                    name="supported_currency_ids"
+                    eval="[Command.set([
+                         ref('base.USD'),
+                         ref('base.MMK'),
+                     ])]"
+            />
+        </record>
+    </data>
+</odoo>
