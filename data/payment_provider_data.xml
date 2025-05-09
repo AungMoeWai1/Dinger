@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+
+    <record id="payment_provider_dinger" model="payment.provider">
+        <field name="name">Dinger</field>
+        <field name="code">dinger</field>
+        <field
+                name="image_128"
+                type="base64"
+                file="payment_dinger/static/description/icon.png"
+        />
+        <field name="module_id" ref="base.module_payment_dinger"/>
+        <field name="redirect_form_view_id" ref="redirect_form"/>
+        <field
+                name="payment_method_ids"
+                eval="[(6, 0, [
+                   ref('payment_dinger.payment_method_dinger_kpay'),
+                   ref('payment_dinger.payment_method_dinger_ayapay'),
+               ])]"
+        />
+    </record>
+
+</odoo>
